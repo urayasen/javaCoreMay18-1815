@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>dom_js</title>
+        <style>
+            .bg-red{
+                background: red;
+            }
+            .color-green{
+                color: green;
+            }
+            .container{
+                width: 200px;
+                height: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Hello</h1>
+        <h1 class="xxx">Hello</h1>
+        <h1 class="xxx">Hello</h1>
+        <hr>
+        <div id="container"></div>
+        <hr>
+        <h1 id="title" class="color-green">Hello</h1>
+        <h1 name="header">Hello</h1>
+        <h1 name="header">Hello</h1>
+        <form name="fullname">
+            <input type="text" name="name" value="name inp">
+            <input type="text" name="surname" value="surname inp">
+        </form>
+        <form name="contacts">
+            <input type="text" name="email" value="email inp">
+            <input type="text" name="phone" value="phone inp">
+        </form>
+
+<!--<button onmouseover="(function() {-->
+  <!--console.log('clicked!!!!')-->
+<!--})()">Click me</button>-->
+
+<!--<button onmouseover="showAlert()">Click me</button>-->
+<!--<button>Click me</button>-->
+
+    </body>
+</html>
+
+<script>
+
+    // робота  з вузлами
+    console.log(document.head.nodeType);
+    console.log(Node.ELEMENT_NODE);
+    console.log(Node.TEXT_NODE);
+    console.log(Node.COMMENT_NODE);
+    console.log(document.head.childNodes);
+    console.log(document.head.parentElement);
+    console.log(document.head.children);
+    console.log(document.body);
+    // let documentById = document.getElementById('title');
+    // console.dir(documentById);
+    // let documentByTagName = document.getElementsByTagName('h1');
+    // console.dir(documentByTagName);
+    // let documentByClassName = document.getElementsByClassName('xxx');
+    // console.dir(documentByClassName);
+    // let documentByName = document.getElementsByName('header');
+    // console.dir(documentByName);
+    let querySelectorTitle = document.querySelector('#title');
+    console.log(querySelectorTitle);
+    // let querySelectorByNameOfHeader = document.querySelector('[name=header]');
+    // console.dir(querySelectorByNameOfHeader);
+    // let querySelectorByNameOfHeader = document.querySelectorAll('[name=header]');
+    // console.dir(querySelectorByNameOfHeader);
+    // let elementById = document.getElementById('title');
+    // elementById.innerText = 'kkk';
+    // elementById.innerHTML = '<em>xxx</em>';
+    // elementById.outerText = 'ghbdtn';
+    // elementById.outerHTML = '<h5>ghbdtn</h5>';
+    // let oldClasses = elementById.getAttribute('class');
+    // elementById.setAttribute('class','bg-red ' + oldClasses);
+    // console.log(atroldClassesibute);
+    // elementById.classList.add('bg-red');
+    // elementById.classList.remove('bg-red');
+    // console.log(elementById.classList.contains('bg-red'));
+    // elementById.classList.toggle('color-green');
+    // elementById.style.background = 'blue';
+    // elementById.style.height = '150px';
+    // document.write('<h3>hello</h3>')
+    // let newDivElement = document.createElement('div');
+    // newDivElement.classList.add('container', 'bg-red', 'color-green');
+    // newDivElement.innerHTML = '<h3> Hello from div </h3>'
+    // let container = document.getElementById("container");
+    //
+    // document.body.appendChild(newDivElement);
+    //
+    // container.appendChild(newDivElement.cloneNode(true));
+  // document.body.replaceChild(newDivElement,container);
+    // document.body.insertBefore(newDivElement,container);
+    // container.appendChild(newDivElement);
+    // document.body.appendChild(newDivElement);
+    // console.log(document.forms.fullname.name.value);
+    // console.log(document.forms.fullname.surname.value);
+    // console.log(document.forms.contacts.email.value);
+    // console.log(document.forms.contacts.phone.value);
+
+   //  let persons = [
+   //      {name: "aaa", surname: "bbb"},
+   //      {name: "aaa", surname: "bbb"},
+   //      {name: "aaa", surname: "bbb"},
+   //      {name: "aaa", surname: "bbb"},
+   //      {name: "aaa", surname: "bbb"},
+   //      {name: "aaa", surname: "bbb"},
+   //      {name: "aaa", surname: "bbb"},
+   //      {name: "aaa", surname: "bbb"},
+   //      {name: "aaa", surname: "bbb"},
+   //      {name: "aaa", surname: "bbb"},
+   //      {name: "aaa", surname: "bbb"},
+   //      {name: "aaa", surname: "bbb"},
+   //      {name: "aaa", surname: "bbb"},
+   //      {name: "aaa", surname: "bbb"},
+   //      {name: "aaa", surname: "bbb"},
+   //      {name: "aaa", surname: "bbb"},
+   //      {name: "aaa", surname: "bbb"},
+   //      {name: "aaa", surname: "bbb"},
+   //      {name: "aaa", surname: "bbb"},
+   //      {name: "aaa", surname: "bbb"},
+   //      {name: "aaa", surname: "bbb"},
+   //      {name: "aaa", surname: "bbb"},
+   //  ];
+   //
+   let ulContainer = document.createElement("ul");
+    for (const person of persons) {
+       let personLi = document.createElement("li");
+       personLi.classList.add("color-green");
+       personLi.classList.add("bg-red");
+       personLi.innerHTML = `
+       <h3>
+        <em>${person.name}</em> === <strong>${person.surname}</strong>
+       </h3>
+       `;
+       ulContainer.appendChild(personLi);
+    }
+
+    document.body.appendChild(ulContainer);
+
+    let elementsByTagNameElement = document.getElementsByTagName("button")[0];
+
+    elementsByTagNameElement.onmouseover = function showAlert() {
+        console.log("clicked!!!!");
+    }
+
+</script>

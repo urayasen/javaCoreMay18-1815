@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>oop_javascript</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    // // // let obj = {
+    // // //     name: 'xxx',
+    // // //     age: 755,
+    // // //     isMarried: false,
+    // // //     sayHello: function(){
+    // // //         console.log('hello!');
+    // // //     }
+    // // // }
+    // // //
+    // // // console.log(obj);
+    // // // obj.sayHello();
+    // //
+    // // function Person(nameI = '', surnameI = '', ageI = 0){
+    // //     this.name = nameI;
+    // //     this.surname = surnameI;
+    // //     this.age = ageI;
+    // //
+    // //     // this.greet = function(){
+    // //     //     console.log(this);
+    // //     // };
+    // //     //
+    // //     // this.fly = function () {
+    // //     //     console.log('ahahah');
+    // //     // };
+    // // };
+    // //
+    // // Person.prototype.greet = function () {
+    // //   console.log('hello world');
+    // // };
+    // //
+    // // function Developer(nameI = '', surnameI = '', ageI = 0, skillsI = []){
+    // //     Person.apply(this, arguments);
+    // //     this.skills = skillsI;
+    // //
+    // // };
+    // //
+    // // Developer.prototype.__proto__ = Person.prototype;
+    // // Developer.prototype.coding = function () {
+    // //     console.log('tuc tuc tuc');
+    // // }
+    // // let developer = new Developer('454', '545', 55, ['54']);
+    // // developer.greet();
+    // // developer.coding();
+    // // console.log(developer);
+    // //
+    // //
+    // // let morty = new Person('morty', 'sanches', 77);
+    // // let rick = new Person('rick', 'smith', 12);
+    // // rick.greet();
+    // //
+    // //
+    // // // morty.fly =
+    // //
+    // // // function hello(count = 1){
+    // // //     for (let i = 0; i < count; i++) {
+    // // //         console.log('hello function(){
+    // // //     console.log('ahhh!!!');
+    // // // };
+    // // //
+    // // // morty.fly = function () {
+    // // //     console.log('!!!!!!!!!!!');
+    // // // };
+    // // // morty.fly();
+    // // // rick.fly();', this.name, i);
+    // // //     }
+    // // //
+    // // // };
+    // // // // hello.call(morty,3);
+    // // // // hello.call(morty,[3]);
+    // // //
+    // // // let helloBindedToRick = hello.bind(rick);
+    // // //
+    // // // helloBindedToRick(5);
+    //
+    // // let name = 'aaa';
+    // // let surname = 'xxx';
+    // //
+    // // let person = {
+    // //     name,
+    // //     surname
+    // // }
+    // //
+    // // console.log(person);
+    //
+    // class Animal{
+    //
+    //     constructor(name, age ,status) {
+    //         this.name = name;
+    //         this.age = age;
+    //         this.status = status;
+    //         // this.speak = function () {
+    //         //     console.log('aaa');
+    //         // }
+    //     }
+    //
+    //     // get status(){
+    //     //     console.log('getter');
+    //     //     return this._status;
+    //     // }
+    //     //
+    //     //
+    //     // set status(value) {
+    //     //     console.log('setter');
+    //     //     this._status = value;
+    //     // }
+    //
+    //     speak(){
+    //         console.log('animal speak');
+    //     }
+    // }
+    //
+    // class Dog extends Animal{
+    //
+    //     constructor(name, age, status, color) {
+    //         super(name, age, status);
+    //         this.color = color;
+    //     }
+    //
+    //     speak(){
+    //         super.speak();
+    //         console.log('gav gav gav');
+    //     }
+    // }
+    //
+    // let animal = new Dog("vfvff", 45, 'bla bla bla', 'red');
+    // console.log(animal);
+    // // animal.status = 'aaa';
+    // // console.log(animal.status);
+
+
+    // class ArrayHelper{
+    //     constructor(){
+    //
+    //     }
+    //
+    //     static printArr(arr){
+    //         console.log(arr);
+    //     }
+    // }
+    //
+    // ArrayHelper.printArr([1,2,3]);
+
+
+    // let obj = {name: 'aaa', age: 188};
+    // let objJSON = JSON.stringify(obj);
+    //
+    // console.log(objJSON);
+    // let parse = JSON.parse(objJSON);
+    // console.log(parse);
+
+    let arr = [1,4,77,77,5,4,2,3,99,77,99];
+
+
+    console.log(arr.every(function (value, index, arr) {
+        return typeof value === 'number';
+    }));
+
+    // arr.sort(function (a,b) {
+    //     return a - b;
+    // });
+    //
+    // console.log(arr);
+
+    // let newArr = arr.map(function (value, index, arr) {
+    //     return value + 100;
+    // })
+    //
+    // console.log(newArr);
+
+    // let accumulatorRec = arr.reduce(function (accumulator, currentvalue) {
+    //     return accumulator + currentvalue;
+    // })
+    //
+    // console.log(accumulatorRec);
+    //
+    // // let s = arr.join(':');
+    // console.log(s);
+    // console.log(s.split(':'));
+
+    // arr.includes(1,0);
+
+    // let arr1 = ['xxx','yyy'];
+    // let number = arr.concat(arr1);
+    // console.log(number);
+
+
+    // let number = arr.forEach(function(value, index, arr){
+    //     console.log(value);
+    // });
+    // console.log(number);
+    // let number = arr.findIndex(function(value, index, arr){
+    //     return value > 50;
+    // });
+    // console.log(number);
+    // let number = arr.filter(function(value, index, arr){
+    //     return value > 50;
+    // });
+
+    // console.log(number);
+
+    // console.log(arr.indexOf(2));//шукає індекс елемента з початку
+    // console.log(arr.lastIndexOf(2));//шукає індекс елемента з кінця
+
+    // delete arr[0];//удаляє елемент в масиві але лишає його місце
+    // arr.splice(arr.indexOf(5),3, 'xxx', 'xxx', 'xxx');//вирізає елементи з масиву і вставляє інші
+    // console.log(arr);
+    //
+    // let numbers = arr.slice(0,3);//вибирає елементи зі старого і створює новий масив
+    // console.log(number);
+
+
+</script>

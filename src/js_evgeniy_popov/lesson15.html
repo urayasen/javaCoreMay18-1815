@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js_lesson15</title>
+</head>
+<body>
+<script>
+/*
+дополнительные методы для работы с масивами
+реверс - reverse()
+сортировка - sort()
+замена разделителя - join()
+соединение массивов - concat()
+делаем вырезку из массива - slice()
+ */
+
+
+    var students = ["Абаканов Сергей", "Гагарин Матвей", "Хантухова Лейла", "Алалина Алина", "Сакуров Иоган"];
+    var students2 = ["Виталий Петров", "Джейсон Баттон"];
+    var total = students.concat(students2);
+    var happyStudets = students.slice(1,3);
+
+    //var rev = students.reverse();
+    // var sort = students.sort();
+    // var join = students.join(".");
+
+
+    document.write(happyStudets);
+
+</script>
+</body>
+</html>

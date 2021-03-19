@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function myFunction(arr1, arr2){
+        if(arr1.length===arr2.length){
+            let arr3 = [];
+
+            for (let i = 0; i < arr1.length; i++) {
+                if (i % 2 === 0) {
+                    arr3[i] = arr1[i] + arr2[i];
+                }else{
+                    arr3[i] = arr1[i] - arr2[i];
+                }
+            }
+            return arr3;
+
+        }
+        else
+            return -1;
+
+    }
+
+    let x1 = [1,3,5,2,1];
+    let x2 = [2,4,7,9,2];
+    let x3 = myFunction(x1,x2);
+
+    console.log(x3);
+
+    let x = 123456789;
+
+    function Revers(t){
+        let tString = t.toString();
+        let sSplit = tString.split('');
+        let str1 = [] ;
+        console.log(t);
+        for (let i = 0; i < tString.length; i++) {
+            //console.log(sSplit[tString.length - i - 1]);
+           str1.push(sSplit[tString.length - i - 1]);
+
+
+        }
+
+        let a = parseInt(str1.join(""));
+        return a;
+    }
+    let k = Revers(x);
+
+    console.log(k);
+
+</script>
+</body>
+</html>

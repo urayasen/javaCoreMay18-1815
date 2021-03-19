@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bom_javascript</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+
+
+    </style>
+</head>
+<body>
+<!--<button id="btn">go to okten</button>-->
+<!--<a href="http://oktenweb.com" id="xxx">okten</a>-->
+<!--<button id="go">Go</button>-->
+<!--<button id="back">Back</button>-->
+<!--<button id="refresh">Refresh</button>-->
+
+<!--<div class="">-->
+    <!--<div class="">-->
+        <!--<div class="">-->
+
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+</body>
+</html>
+
+<script>
+    // let btn = document.getElementById('btn');
+    // btn.onclick = function(){
+    //     window.location.href="http://oktenweb.com";
+    //
+    // }
+    // let xxx = document.getElementById("xxx")
+    // xxx.onclick = function(){
+    //     event.preventDefault();
+    //     console.log("aaa");
+    //
+    //     window.location.href = xxx.getAttribute('href')
+    // }
+    //
+    // console.log(window);
+   // let divs = document.getElementsByTagName('div');
+   //
+   // divs[0].onclick = function () {
+   //     console.log(1);
+   // };
+   //
+   // divs[1].onclick = function () {
+   //     console.log(2);
+   // };
+   //
+   // divs[2].onclick = function (event) {
+   //     event.stopPropagation();
+   //     console.log(3);
+   // };
+    // console.log('0');
+    // window.navigator.geolocation.getCurrentPosition(function (position) {
+    //     console.log(position);
+    // });
+    // console.log('111');
+
+   // let go = document.getElementById('go')
+   // let back = document.getElementById('back')
+   // let refresh = document.getElementById('refresh')
+   //  go.onclick = function () {
+   //      // window.history.forward();
+   //      window.history.go(1);
+   //
+   //  };
+   //  back.onclick = function () {
+   //      // window.history.back();
+   //      window.history.go(-1);
+   //  };
+   //  refresh.onclick = function () {
+   //      window.location.reload();
+   //  }
+
+    // window.localStorage.setItem('user','nazik');
+    // window.localStorage.removeItem('user');
+    // window.localStorage.setItem('user',JSON.stringify({name: 'Vasia', surname: 'Popov'}));
+    // console.log(JSON.parse(window.localStorage.getItem('user')));
+    // console.log(window.localStorage
+
+    window.navigator.geolocation.getCurrentPosition(function (coordinates) {
+        coordinates.coords.latitude
+    })
+
+    let submitted = window.localStorage.getItem('submitted');
+    if(submitted === 'true'){
+        alert('ok')
+    }else{
+        let confirmed = confirm();
+        window.localStorage.setItem('submitted', confirmed);
+    }
+
+</script>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Events_js</title>
+    <style>
+        .container{
+            width: 200px;
+            height: 200px;
+            background: blue;
+        }
+        .inner{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+        /*.one{*/
+            /*width: 600px;*/
+            /*height: 600px;*/
+            /*background: red;*/
+        /*}*/
+        /*.two{*/
+            /*width: 400px;*/
+            /*height: 400px;*/
+            /*background: green;*/
+        /*}*/
+        /*.three{*/
+            /*width: 200px;*/
+            /*height: 200px;*/
+            /*background: blue;*/
+        /*}*/
+    </style>
+</head>
+<body>
+
+    // І варіант задання події
+    <button onclick="(function () {
+      console.log('hello!!!');
+    }())">Click me</button>
+    ІI варіант задання події
+    <button onclick="onClickButton()">Click me</button>
+    <div class="container" id="block"></div>
+
+    <input type="text" id="inp">
+    <h3 id="title"></h3>
+
+    <input type="text" id = 'height' placeholder="height">
+    <input type="text" id = 'width' placeholder="width">
+    <input type="text" id = 'color' placeholder="color">
+
+    <h3 id="title" contenteditable="true">Hello world!!!</h3>
+    <h3 id="title">Hello world!!!</h3>
+
+    <div class = "one">
+        <div class="two">
+            <div class="three"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="inner">
+
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+    ІI варіант задання події
+    function onClickButton() {
+        console.log("aaa")
+    }
+    ІII варіант задання події
+    let btn = document.getElementById('btn');
+    btn.onclick = function () {
+        console.log("clicked!!!");
+    }
+    мишка входить в блок
+    block.onmouseenter =  function(event){
+        this.style.background = `rgb(${event.clientX}, ${event.clientY}, ${event.pageX})`;
+       console.log("rgb( "+event.clientX + ',' +  event.clientY +  ',' +  event.pageX + ')');
+
+    }
+    мишка виходить з блоку
+    block.onmouseleave = function (event) {
+        this.style.background = 'red';
+    }
+
+    let block = document.getElementById('block');
+    block.onmousedown = function(event){
+        block.onmousemove = function (event) {
+            block.style.background=`rgb(${event.clientX}, ${event.clientY}, ${event.screenX})`;
+        }
+
+    }
+    block.onmouseup = function () {
+        block.onmousemove=null;
+    }
+
+
+    let inp = document.getElementById('inp');
+    let title = document.getElementById('title');
+
+    inp.oninput = function (event) {
+        title.innerText = inp.value;
+    }
+
+    // let block = document.getElementById('block');
+    //
+    // let inputs = document.getElementsByTagName('input')
+    // for (const input of inputs) {
+    //     input.oninput = function (event) {
+    //         let id = input.id;
+    //         let value = input.value;
+    //
+    //         switch (id) {
+    //             case 'height':{
+    //                 block.style.height = value + 'px'
+    //                 break;
+    //             }
+    //             case 'width':{
+    //                 block.style.width = value + 'px'
+    //                 break;
+    //             }
+    //             case 'color':{
+    //                 block.style.background = value;
+    //                 break;
+    //             }
+    //         }
+    //     }
+    // }
+    // let block = document.getElementById('block');
+    //
+    // let title = document.getElementById('title');
+    // title.ondblclick = function (event) {
+    //     let input = document.createElement('input');
+    //     input.value = title.innerText;
+    //     document.body.replaceChild(input, title);
+    //
+    //     input.onblur = function () {
+    //         title.innerText = input.value.toUpperCase();
+    //         document.body.replaceChild(title, input);
+    //     }
+    // }
+
+    // let divs = document.getElementsByTagName('div');
+
+    // divs[0].onclick = function () {
+    //     console.log('red');
+    // }
+    // divs[1].onclick = function () {
+    //     console.log('green');
+    // }
+    // divs[2].onclick = function () {
+    //     console.log('blue');
+    // }
+
+    // let one = divs[0];
+    // let two = divs[1];
+    // let three = divs[2];
+    //
+    // one.addEventListener('click', function () {
+    //     console.log('one');
+    // });
+    // two.addEventListener('click', function () {
+    //     console.log('two');
+    // }, true);
+    // three.addEventListener('click', function () {
+    //     console.log('three');
+    // });
+    //    let container =  document.getElementsByClassName("container")[0];
+    // console.log(container);
+    // container.onmousedown = function (event) {
+    //     if(event.button === 0) {
+    //         container.style.position = 'absolute';
+    //
+    //         document.onmousemove = function (event) {
+    //             container.style.top = event.clientY + 'px'
+    //             container.style.left = event.clientX + 'px'
+    //
+    //         }
+    //     }
+    // }
+    //
+    //
+    // container.onmouseup = function () {
+    //     document.onmousemove = null;
+    // }
+
+    let container = document.getElementsByClassName('container')[0];
+    
+    container.onclick = function (event) {
+        console.log(event.target);
+    }
+
+
+</script>

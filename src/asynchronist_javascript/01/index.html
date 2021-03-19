@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>asynchronist</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    // console.log(1);
+    // console.log(2);
+    // setTimeout(function () {
+    //   try {
+    //       throw new Error('aaa!!!');
+    //   }catch(e){
+    //       console.log('handled');
+    //   }
+    // },500);
+    // console.log(3);
+    // console.log(4);
+
+    // let interval = setInterval(function () {
+    //     console.log('ok')
+    // },500);
+    // let timeout = setTimeout(function () {
+    //     clearInterval(interval);
+    // },3000);
+    // clearTimeout(timeout);
+    
+    // function stupidCalc(a, b, callback) {
+    //     setTimeout(function () {
+    //     callback(a + b);
+    //     },500);
+    // };
+    // stupidCalc(5, 5, function (res) {
+    //     console.log(res);
+    // });
+
+    // function getNum(callback) {
+    //     setTimeout(function () {
+    //         let number = callback(Math.random()*100);
+    //         if(number<50){
+    //
+    //         }else{
+    //             callback(number);
+    //         }
+    //     },500)
+    // };
+    // getNum(function (a) {
+    //     getNum(function (b) {
+    //         getNum(function (c) {
+    //             console.log(a,b,c);
+    //         });
+    //     });
+    // });
+
+
+    // function getNum(callback) {
+    //     setTimeout(function () {
+    //         let number = callback(Math.random()*100);
+    //         if(number<50){
+    //             console.log(new Error('aaa!!!'))
+    //         }else{
+    //             callback(null, number);
+    //         };
+    //     },500);
+    // };
+    //  getNum(function (err, res) {
+    //      if(err){
+    //          console.log(err);
+    //      }else{
+    //          console.log(res)
+    //      }
+    //  });
+
+    // let promise = new Promise(function (resolve, reject) {
+    //     setTimeout(function () {
+    //         let num = Math.random() * 100;
+    //         if(num<50) {
+    //             reject(new Error('aaa!!!'));
+    //         }else{
+    //             resolve(num);
+    //         }
+    //         // resolve(true);
+    //     },500);
+    // });
+    //
+    // promise
+    //         .then(function (res) {
+    //         console.log(res);
+    //         })
+    //         .catch(function (err) {
+    //         console.log('handled');
+    //     });
+
+
+    // function capital(str){
+    //     return new Promise(function (resolve, reject) {
+    //         setTimeout(function () {
+    //             resolve(str.toUpperCase());
+    //         },500)
+    //     });
+    // }
+    // function getFirstLetter(str){
+    //     return new Promise(function (resolve, reject) {
+    //         setTimeout(function () {
+    //             resolve(str[0]);
+    //         })
+    //     })
+    // }
+    // capital("dkffgjdgfg")
+    //     .then(function (res) {
+    //         return(getFirstLetter(res));
+    //     })
+    //     .then(function (firstLetter) {
+    //         console.log(firstLetter);
+    //     })
+
+    // function getHello(str){
+    //     return new Promise(function (resolve, reject) {
+    //        setTimeout(function () {
+    //            resolve('Hello');
+    //        },500)
+    //     });
+    // }
+    // function getWorld(str){
+    //     return new Promise(function (resolve, reject) {
+    //         setTimeout(function () {
+    //             resolve('World');
+    //         },500)
+    //     });
+    // }
+    // Promise.all([getHello(), getWorld()]).then(function ([a,b]) {
+    //     console.log(a + b);
+    // });
+    // Promise.all([getHello(), getWorld()]).then(function ([res]) {
+    //     console.log(res);
+    // });
+
+    //     function getHello() {
+    //         return new Promise((resolve, reject) => {
+    //             setTimeout(()=>{
+    //                 resolve('hello');
+    //             },600);
+    //         })
+    //     }
+    //     function getWorld() {
+    //         return new Promise((resolve, reject) => {
+    //             setTimeout(()=>{
+    //                 resolve('world');
+    //             },500);
+    //         })
+    //     }
+    //     async function getHelloWorld() {
+    //         let hello = await getHello();
+    //         let world = await getWorld();
+    //
+    //         return hello + world;
+    //     }
+    // getHelloWorld().then(function (res) {
+    //     console.log(res);
+    // })
+
+    async function getData() {
+       let response = await fetch(' https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5');
+       let data = await response.json();
+
+       console.log(data);
+    };
+
+    getData();
+
+
+</script>
+

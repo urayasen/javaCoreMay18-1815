@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let users = [
+            {id:   1, name:  'vasya', age:  21 },
+            {id:   2, name:  'petya', age:  22 },
+            {id:   3, name:  'kolya', age:  23 },
+            {id:   4, name:  'olya',  age:  21 },
+            {id:   5, name:  'anya',  age:  23 },
+            {id:   6, name:  'max',   age:  22 }
+    ];
+
+    // console.log(users);
+    // users.push({id: 7, name: 'kokos', age: 90});
+    // console.log(users);
+    // users.pop();
+    // console.log(users);
+    // users.unshift({id: 7, name: 'kokos', age: 90});
+    // console.log(users);
+    // users.shift();
+    // console.log(users);
+
+    // let filter =  users.filter((user) => {
+    //     return user.age > 22;
+    // } );
+    //
+    // console.log(filter);
+    // console.log(users);
+    //
+    let sort = users.sort((user1, user2) => {
+        return user1.age - user2.age;
+    });
+    //
+    // console.log(sort);
+    // console.log(users);
+
+    // let filter = users.sort((a, b) => a.age - b.age)
+    //     .filter(value => value.age > 21);
+    // console.log(filter);
+    // console.log(users);
+
+     let anies = users.map(value => {
+
+        value.greeting = function () {
+            Console.log( `helli my name is -  ${this.name}`);
+        };
+
+        return value;
+    });
+
+    // console.log(anies);
+    console.log(users);
+
+    // users[0].greeting();
+
+    // let splice = users.splice(0,1);
+    // console.log(splice);
+    // console.log(users);
+
+    users.reduce((previousValue, currentValue) => {
+        console.log(previousValue, currentValue);
+        if(typeof previousValue =='object') {
+            return previousValue.age + currentValue.age;
+
+        }else{
+            return previousValue + currentValue.age;
+        }
+    });
+
+    // let reduce =  [123, 234, 345, 456].reduce((previousValue, currentValue) => {
+    //     console.log(previousValue, currentValue);
+    //     return previousValue + currentValue;
+    // });
+
+    // console.log(reduce);
+
+     // let slice = users.slice(0,3);
+     // console.log(slice);
+
+    //  users.splice(1,2, 'new 1', 'new 2');
+    // console.log(users);
+    // users.forEach(value => {
+    //     console.log(value);
+    // });
+
+    // console.log(users.find(value => value.age == 23));
+
+     let b = users.some(value => value.id == 3);
+    console.log(b);
+    let c = users.every(value => value.age == 3);
+    console.log(c);
+
+    let number = users.findIndex(value => value.age == 23);
+    console.log(number);
+
+    class User{
+        constructor(name, age) {
+            this._name = name;
+            this._age = age;
+        }
+
+        get name() {
+            return this._name;
+        }
+
+        set name(value) {
+            this._name = value;
+        }
+
+        get age() {
+            return this._age;
+        }
+
+        set age(value) {
+            this._age = value;
+        }
+
+        greeting(){
+            return this.name;
+        }
+    }
+
+    let user = new User('vasia', 23);
+    user.name = 'kokos';
+    console.log(user.name);
+
+    class SuperUser extends User{
+          constructor(name, age, status) {
+            super(name, age);
+              this._status = status;
+          }
+
+
+
+
+        get status() {
+            return this._status;
+        }
+
+        set status(value) {
+            this._status = value;
+        }
+    }
+
+    let superUser = new SuperUser('kokoos', 123 ,true);
+    superUser.greeting();
+    console.log(superUser);
+
+    function UserX(name,age){
+        this.name = name;
+        this.age = age;
+    }
+
+    // let userX1 = Object.create(userX);
+    // userX1.status = true;
+    // console.log(userX1);
+    // let userX = new UserX('asdfas', 123123);
+
+    // console.log();
+    // let xxx = {name: 'asdqwe'};
+    // console.log(user.greeting.call(xxx));
+
+    function SuperUserX(name, age, status) {
+        UserX.apply(this, [name, age]);
+        // UserX.call(this, name, age);
+        this.status = status;
+    }
+
+    let superUserX = new SuperUserX('zxc', 123, true);
+    console.log(superUserX);
+
+    let jsonUSER = JSON.stringify(user);
+    console.log(jsonUSER);
+    let poi = '{"_name": "kokos", "_age": 23}';
+    console.log(poi);
+    let parse = JSON.parse(jsonUSER);
+    console.log(parse);
+
+    user.greeting.call(parse);
+    console.log(parse);
+
+    UserX.prototype.createStatus = function () {
+        this.ststus = false;
+    }
+    // UserX.prototype.status = true;
+
+    let vasia = new UserX('vasia', 12);
+    let petia = new UserX('petia', 12);
+
+    vasia.createStatus();
+    console.log(vasia);
+    petia.createStatus();
+    console.log(petia);
+
+    Array.prototype.print = function () {
+        console.log(this);
+    }
+    let arr = [1,2,3,4];
+    arr.print();
+
+</script>
+
+
+
+
+</body>
+</html>

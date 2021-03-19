@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    // {
+    //     var a = 10;
+    //     let b = "ftrhhhdfhdhdfg";
+    // }
+
+    console.log(a, b);
+
+    // const x = 100;
+    // console.log(x);
+
+    // let x = "ffngmgmgmgm"
+    // x = 1000;
+    // x = {name: "serg", age: 30};
+    // console.log(x.name, x.age);
+    //
+    // x = [];
+    // x[1000] = "oktenweb";
+    // console.log(x);
+    //
+    // for (let i = 0; i < x.length; i++) {
+    //     const x1 = x[i];
+    //     console.log(x1);
+    // }
+
+    let user = {
+        name: "vasia",
+        age: 31,
+        skills: [123, true, {}, [], "fjtfngfgh"],
+        account: {
+            login: 'trol',
+            password: 'azazazaa'
+        },
+        work: function () {
+
+        }
+
+    };
+
+    // let user = {name: 'vasia'};
+    // console.log(user.account.password);
+    console.log(user['name']);
+
+
+    for (let key in user) {
+        // console.log(key);
+        console.log(user[key]);
+
+    }
+
+    function foo() {
+        return 'hello';
+    }
+
+    // console.log(foo());
+    console.log(foo);
+    let bar = foo;
+    console.log(bar());
+    
+    function outer() {
+        let x = 0;
+        let a  = function inner() {
+            return ++x;
+
+        };
+
+        return a;
+    }
+
+
+    let func = outer();
+    console.log(func());
+    console.log(func());
+    console.log(func());
+    console.log(func());
+    console.log(outer()());
+    // console.log(function inner() {
+    //     return ++x;
+    //
+    // }())
+    
+    (function () {
+          console.log("xcvvvv");
+        }());
+
+    let users = [
+        {name: "vasya", age:12},
+        {name: "ania", age:13},
+        {name: "olia", age:14},
+        {name: "pasha", age:15},
+        {name: "max", age:90}
+
+    ]
+
+    users.filter(function (value) {
+        console.log(value);
+    });
+
+
+    let filter = users.filter(function (value) {
+        return value.age > 14;
+    });
+
+
+
+    let filter1 = users.filter(function (user) {
+        return user.age > 14;
+    });
+
+    console.log(filter1);
+
+    function myFilter(arr, collback){
+        let userList = [];
+        for(const a of arr){
+            let userOrNull = collback(a);
+            if(userOrNull){
+                userList.push(userOrNull);
+            }
+        }
+        return userList;
+
+    }
+
+
+    let aswde = myFilter(users, function (user) {
+        return user.age > 14 ? user : null;
+    });
+
+document.write(aswde);
+
+
+    console.log(aswde);
+
+</script>
+&gt;
+</body>
+</html>

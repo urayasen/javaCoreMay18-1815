@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js_lesson13</title>
+</head>
+<body>
+<script>
+    var days = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"];
+    var count = days.length;
+   document.write("Количество елементов: " + count +"</br>");
+    var students = ["Абаканов Сергей", "Алалина Алина","Гагарин Матвей", "Хантухова Лейла"];
+    students.push("Сакуров Иоган");//добвление елемента в конец массива
+    students.unshift("Тимонов Вячеслав");//добавление елемента в начало массыва
+    students.pop()//удаление последнего елемента массыва
+    students.shift();//удаление первого елемента массыва
+    document.write("Последный студент: " + students[students.length - 1]);
+
+</script>
+</body>
+</html>
